@@ -17,14 +17,22 @@ function initializeApp(data) {
         liff.sendMessages([{
             type: 'text',
             text: "plugon"
-        }
+        }]).then(function () {
+            window.alert("Message sent");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
     });
 
     document.getElementById('closesplug').addEventListener('click', function () {
         liff.sendMessages([{
             type: 'text',
             text: "plugoff"
-        }
+        }]).then(function () {
+            window.alert("Message sent");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
     });
     document.getElementById('openwindowbutton').addEventListener('click', function () {
         liff.openWindow({
