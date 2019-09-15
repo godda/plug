@@ -13,6 +13,19 @@ function initializeApp(data) {
     document.getElementById('groupidfield').textContent = data.context.groupId;
 
     // openWindow call
+    document.getElementById('openplug').addEventListener('click', function () {
+        liff.sendMessages([{
+            type: 'text',
+            text: "plugon"
+        }
+    });
+
+    document.getElementById('closesplug').addEventListener('click', function () {
+        liff.sendMessages([{
+            type: 'text',
+            text: "plugoff"
+        }
+    });
     document.getElementById('openwindowbutton').addEventListener('click', function () {
         liff.openWindow({
             url: 'https://line.me'
